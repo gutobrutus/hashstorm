@@ -5,7 +5,7 @@ from hashstorm.config import help_text
 from hashstorm.core import process_wordlist
 
 main = Typer(
-    help='Hash Decoder App',
+    help='HashStorm - Hash Decoder App',
     context_settings={"help_option_names": ["-h", "--help"]},
     add_completion=False,
 )
@@ -28,5 +28,5 @@ def run_app(
             None, '--version', '-v', help='Show version app', callback=version_callback
         ),
 ):
-    print('Inificiando o processamento...')
+    print('Iniciando o processamento...')
     process_wordlist(wordlist, hash_target, algorithms)
