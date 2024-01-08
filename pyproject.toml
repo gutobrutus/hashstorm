@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Simples decoder para hashes"
 authors = ["Guto Brutus <guto@devops.pro.br>"]
 readme = "README.md"
+include = [
+    { path = "wordlist/storm-wordlist.txt"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
