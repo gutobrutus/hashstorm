@@ -1,5 +1,7 @@
 import hashlib
 import base64
+from rich import print
+
 
 def apply_hash(word, hash_algorithms):
     result = word
@@ -18,6 +20,7 @@ def apply_hash(word, hash_algorithms):
 
     return result
 
+
 def check_hash(word, hash_target, algorithms):
     return apply_hash(word, algorithms) == hash_target
 
@@ -28,7 +31,10 @@ def process_wordlist(wordlist_file, hash_target, algorithms):
             contents = wordlist.read().splitlines()
             for word in contents:
                 if check_hash(word, hash_target, algorithms):
-                    print(f'O valor em texto claro da hash {hash_target} informada é {word}')
+                    print(
+                        f'[bold red]O valor em texto claro da hash[/bold red] [green]{hash_target}[/green] '
+                        f'[bold red]informada é[/bold red] [green]{word}[/green] :boom:'
+                    )
                     return
     except FileNotFoundError as e:
         print(f"Arquivo não encontrado: {e.filename}. Verifique o caminho do arquivo e tente novamente.")

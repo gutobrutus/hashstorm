@@ -1,3 +1,4 @@
+import time
 from typer import Argument, Typer, Option, Exit
 from typing import Optional
 from rich import print
@@ -28,5 +29,8 @@ def run_app(
             None, '--version', '-v', help='Show version app', callback=version_callback
         ),
 ):
-    print('Iniciando o processamento...')
+    start_time = time.time()
+    print('Iniciando o processamento em {}'.format(time.ctime()))
     process_wordlist(wordlist, hash_target, algorithms)
+    print('Tempo total: {:.3f} seconds'.format(time.time() - start_time))
+
