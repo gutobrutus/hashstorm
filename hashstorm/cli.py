@@ -2,16 +2,19 @@ import time
 from typer import Argument, Typer, Option, Exit
 from typing import Optional
 from rich import print
+from hashstorm.banner import show_banner
 from hashstorm.config import help_text
 from hashstorm.core import process_wordlist
 
 main = Typer(
-    help='HashStorm - Hash Decoder App',
+    help='HashStorm - Hash Decrypter App',
     context_settings={"help_option_names": ["-h", "--help"]},
     add_completion=False,
 )
 
 __version__ = help_text['VERSION']
+
+show_banner()
 
 
 def version_callback(value: bool):
@@ -33,4 +36,3 @@ def run_app(
     print('Iniciando o processamento em {}'.format(time.ctime()))
     process_wordlist(wordlist, hash_target, algorithms)
     print('Tempo total: {:.3f} seconds'.format(time.time() - start_time))
-

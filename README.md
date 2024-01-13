@@ -5,7 +5,7 @@
 Aplicação CLI em Python para realizar o decode de hashes, baseado em um ataque de força bruta a partir de uma wordlist.
 
 ### Licença
-
+A
 [GPLv3](LICENSE)
 
 ## 2. Instalação

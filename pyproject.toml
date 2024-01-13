@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hashstorm"
-version = "0.1.0"
-description = "Simples decoder para hashes"
+version = "0.2.0"
+description = "Simples decrypter para hashes"
 authors = ["Guto Brutus <guto@devops.pro.br>"]
 readme = "README.md"
 include = [
@@ -11,6 +11,7 @@ include = [
 [tool.poetry.dependencies]
 python = "^3.10"
 typer = {extras = ["all"], version = "^0.9.0"}
+pyfiglet = "^1.0.2"
 
 [tool.poetry.scripts]
 hashstorm = "hashstorm.__main__:main"
